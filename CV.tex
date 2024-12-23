@@ -2,7 +2,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
-\usepackage[paper=a4paper, left=15mm, right=15mm, top=0mm, bottom=0mm]{geometry}
+\usepackage[paper=a4paper, left=15mm, right=15mm, top=0mm, bottom=10mm]{geometry}
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{transparent}
@@ -11,6 +11,9 @@
 \usepackage{libertine}
 \usepackage{fancyhdr}
 \usepackage{paracol}
+\usepackage{tcolorbox}
+\usepackage{dashrule}
+\usepackage{amssymb}
 \usepackage[
     colorlinks=true,
     linkcolor=blue,
@@ -19,37 +22,72 @@
     urlcolor=blue
 ]{hyperref}
 
+\newcommand{\Scale}{1.25}
+\tcbuselibrary{skins}
+
 \linespread{1}
 \setlength{\parindent}{1.25cm}
 \setlength{\parskip}{1em}
 
 \definecolor{blue}{HTML}{074799}
+\definecolor{black}{HTML}{1A1A1D}
+
+\pagestyle{empty}
 
 \columnratio{0.35,0.65}
 \setlength{\columnsep}{40pt}
 
-\newcommand{\ContactInfo}{
-    \hspace{20.5em}\textbf{КОНТАКТНАЯ ИНФОРМАЦИЯ}
+\newcommand{\Sep}{
+    \noindent\hdashrule[0.5ex]{\columnwidth}{1pt}{1mm 1pt}
+}
 
-    \noindent\hspace{20.5em}Телефон: +7-967-281-53-04
+\newcommand{\SubTitle}[1]{
+    \begin{tcolorbox}[
+        enhanced,
+        colback=black,
+        arc=5pt,
+        left=1pt,
+        right=1pt,
+        top=2pt,
+        bottom=2pt,
+        halign=center,
+        boxrule=0pt,
+        hbox
+    ]
+    \textcolor{white}{
+        \textbf{#1}
+    }
+    \end{tcolorbox}
+}
+
+\newcommand{\ContactInfo}{
+    \hspace{10.5em}\parbox{\columnwidth}{
+        \begin{center}
+            \textbf{\textit{КОНТАКТНАЯ ИНФОРМАЦИЯ}}
+            
+            \rule{5em}{1pt}
+        \end{center}
+    }
+
+    \noindent\hspace{20.5em}Телефон: +7 (967) 281-53-04
     \hspace{2em}Почта: trud2004@yandex.ru
     \vspace{-1em}
     
     \noindent\hspace{20.5em}Телеграмм: \href{https://t.me/Nep_pasha}{@Nep\_pasha}
-    \noindent\hspace{2.5em}Github: \href{https://github.com/nepavellab}{@nepavellab}
+    \noindent\hspace{3em}Github: \href{https://github.com/nepavellab}{@nepavellab}
 }
 
 \newcommand{\Hat}{
 \begin{adjustwidth}{-15mm}{-15mm}
     \colorbox{blue}{
         \begin{minipage}[b][140pt][c]{\linewidth}
-            \hspace{1.3cm}\parbox{0.1\textwidth}{
+            \hspace{1.55cm}\parbox{0.1\textwidth}{
                 \vspace{7em}
-                \includegraphics[width=0.275\columnwidth, height=0.35\textwidth]{img/profile.png}
+                \includegraphics[width=0.24\columnwidth, height=0.3\textwidth]{img/profile.png}
             }
             \parbox{0.9\textwidth}{
                 \begin{center}
-                    \textcolor{white}{\huge{\transparent{0.8}{Android разработчик}}}
+                    \textcolor{white}{\huge{\transparent{0.7}{Android разработчик}}}
                     \vspace{1em}
 
                     \textcolor{white}{\Huge{\textbf{НЕПОМНЯЩИХ \\ПАВЕЛ}}}
@@ -67,48 +105,85 @@
     \begin{paracol}{2}
         \switchcolumn[0]
         \begin{leftcolumn}
-            \noindent\rule{\columnwidth}{2pt}
-            
-            \noindent\textbf{ТЕХНИЧЕСКИЕ НАВЫКИ}
-            \begin{itemize}[label=\textcolor{blue}{\textbullet}, topsep=0cm, leftmargin=0.275cm]
+            \Sep
+            \begin{center}
+                \textbf{\textit{ТЕХНИЧЕСКИЕ НАВЫКИ}}
+                \vspace{-1.25em}
+
+                \rule{5em}{1pt}
+            \end{center}
+            \vspace{-1em}
+            \begin{itemize}[
+                label=\textcolor{black}{\scalebox{\Scale}{\textbullet}},
+                topsep=0cm,
+                leftmargin=0.275cm,
+                itemsep=0.1cm
+            ]
                 \item Знание базовых алгоритмов \\и структур данных
                 \item Опыт работы с параллельностью, \\многопоточностью и\\ асинхронностью
                 \item Понимание архитектур\\ MVC, MVP и MVVM
-                \item Опыт работы с реляционными и\\ нереляционными базами данных
+                \item Опыт работы с базами данных\\ и сетевыми запросами
                 \item Навыки с командной строкой и системами контроля версий
             \end{itemize}
-
-            \noindent\rule{\columnwidth}{2pt}
             
-            \noindent\textbf{СТЕК ТЕХНОЛОГИЙ}
+            \Sep
+            \begin{center}
+                \textbf{\textit{СТЕК ТЕХНОЛОГИЙ}}
+                \vspace{-1.25em}
+
+                \rule{5em}{1pt}
+            \end{center}
+            \vspace{-1em}
             \begin{itemize}[
-                label=\textcolor{blue}{\textbullet}, 
+                label=\textcolor{black}{\scalebox{\Scale}{\textbullet}}, 
                 topsep=0cm,
                 leftmargin=0.275cm,
                 itemsep=0.1cm
             ]
                 \item Языки программирования: \\C/C++, Java, Kotlin, Python
-                \item SQL (SQLite, PostgreSQL), Firebase
-                \item Andorid Framework
-                \item Jetpack Compose
-                \item Библотеки: Room, Retrofit, Dagger 2
+                \item SQLite, Firebase
+                \item Android Framework
+                \item Room
+                \item Retrofit
+                \item Dagger 2
+            \end{itemize}
+
+            \Sep
+            \begin{center}
+                \textbf{\textit{ЯЗЫКИ}}
+                \vspace{-1.25em}
+
+                \rule{5em}{1pt}
+            \end{center}
+            \vspace{-1em}
+            \begin{itemize}[
+                label=\textcolor{black}{\scalebox{\Scale}{\textbullet}},
+                topsep=0cm,
+                leftmargin=0.275cm,
+                itemsep=0.1cm
+            ]
+                \item Русский (носитель)
+                \item Английский (B1)
             \end{itemize}
         \end{leftcolumn}
 
         \switchcolumn[1]
         \begin{rightcolumn}
-            \noindent\rule{\columnwidth}{2pt}
             
-            \noindent\textbf{ОБРАЗОВАНИЕ}
-            \vspace{1em}
+            \Sep
+            \begin{center}
+                \textbf{\textit{ОБРАЗОВАНИЕ}}
+                \vspace{-1.25em}
 
+                \rule{5em}{1pt}
+            \end{center}
+            \vspace{-1em}
             \noindent\parbox{0.1\columnwidth}{
                 \includegraphics[width=0.05\textwidth]{img/bmstu_logo.png}
             }
-            \parbox{0.85\columnwidth}{
+            \parbox{0.89\columnwidth}{
                 \textbf{МГТУ им. Н.Э. Баумана}
                 \hfill \textbf{Москва}
-                \vspace{0.5em}
                 \hrule
                 \vspace{0.5em}
 
@@ -117,15 +192,19 @@
                 \textit{Математика и компьютерные науки}
             }
 
-            \noindent\rule{\columnwidth}{2pt}
+            \Sep
+            \begin{center}
+                \textbf{\textit{ДОПОЛНИТЕЛЬНОЕ ОБРАЗОВАНИЕ}}
+                \vspace{-1.25em}
 
-            \noindent\textbf{ДОПОЛНИТЕЛЬНОЕ ОБРАЗОВАНИЕ}
-
-            \noindent\parbox{0.1\columnwidth}{
+                \rule{5em}{1pt}
+            \end{center}
+            \vspace{-1em}
+            \noindent\parbox{0.09\columnwidth}{
                 \includegraphics[width=0.05\textwidth]{img/tbank_logo.png}
             }
-            \parbox{0.85\columnwidth}{
-                \textbf{Курс Т-Банк \& МГТУ им. Н.Э. Баумана}
+            \parbox{0.9\columnwidth}{
+                \textbf{НОЦ <<ДИЗРАПТ>> (Т-Банк \& МГТУ)}
                 \hfill \textbf{Москва}
                 \hrule
                 \vspace{0.5em}
@@ -138,8 +217,8 @@
             \noindent\parbox{0.1\columnwidth}{
                 \includegraphics[width=0.05\textwidth]{img/vk_logo.png}
             }
-            \parbox{0.85\columnwidth}{
-                \textbf{<<Технопарк>> (VK \& МГТУ им. Н. Э. Баумана)}
+            \parbox{0.89\columnwidth}{
+                \textbf{ОЦ <<Технопарк>> (VK \& МГТУ)}
                 \hfill \textbf{Москва}
                 \hrule
                 \vspace{0.5em}
@@ -147,6 +226,42 @@
                 Программа: \textit{Android разработчик}
                 \hfill \textit{2022 -- н.в.} 
             }
+            \vspace{-1.1em}
+
+            \Sep
+            \begin{center}
+                \textbf{\textit{ПРОЕКТНАЯ ДЕЯТЕЛЬНОСТЬ}}
+                \vspace{-1.25em}
+
+                \rule{5em}{1pt}
+            \end{center}
+            \vspace{-1em}
+            \textcolor{blue}{$\blacktriangleright$} 
+            \textbf{\underline{Приложение для организации мероприятий}}
+            
+            \noindent\textit{Java, ZXing, Firebase, Android Framework}
+            
+            \noindent Разработал мобильное приложения для создания мероприятий.
+            Создал авторизацию через сторонние сервисы, функцию восстановление пароля через почту,
+            реализовал работу с QR через камеру, добавление и считывание данных из базы по сети.
+            
+            \noindent\textcolor{blue}{$\blacktriangleright$} 
+            \textbf{\underline{Мини-аналог <<Pinterest>> (в рамках курса ОЦ <<Технопарк>>)}}
+            
+            \noindent\textit{Kotlin, Retrofit, Picasso, Room, Android Framework}
+            
+            \noindent Разработал приложение, реализующее базовый функционал социальной сети <<Pinterest>>
+            Разработал функционал асинхронной загрузки данных по сети через открытый API.
+
+            \noindent\textcolor{blue}{$\blacktriangleright$}
+            \noindent\textbf{\underline{Другие проекты}}
+
+            \noindent\textit{JavaScript, Three.js, Django, Bootstrap, Qt/PyQt, OpenMP, sympy, numpy}
         \end{rightcolumn}
     \end{paracol}
+
+    \noindent Разработал веб-сервис <<вопрос-ответ>> в рамках курса <<Основы Web-разработки>>
+    ОЦ <<Технопарк>>. Написал ряд GUI приложений с использованием фреймворка Qt для автоматизации учебной
+    деятельности, разработал математическое ПО с использованием параллельных вычислений в рамках курса <<Операционные системы>>
+    МГТУ им. Н.Э.Баумана. Разработал ряд веб-приложений в рамках курса <<Компьютерной геометрии>> МГТУ им. Н.Э.Баумана.
 \end{document}
