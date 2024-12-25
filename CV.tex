@@ -2,7 +2,13 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
-\usepackage[paper=a4paper, left=15mm, right=15mm, top=0mm, bottom=10mm]{geometry}
+\usepackage[
+    paper=a4paper,
+    left=15mm,
+    right=15mm,
+    top=0mm,
+    bottom=10mm
+]{geometry}
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{transparent}
@@ -41,45 +47,51 @@
     \noindent\hdashrule[0.5ex]{\columnwidth}{1pt}{1mm 1pt}
 }
 
-\newcommand{\SubTitle}[1]{
-    \begin{tcolorbox}[
-        enhanced,
-        colback=black,
-        arc=5pt,
-        left=1pt,
-        right=1pt,
-        top=2pt,
-        bottom=2pt,
-        halign=center,
-        boxrule=0pt,
-        hbox
-    ]
-    \textcolor{white}{
-        \textbf{#1}
-    }
-    \end{tcolorbox}
+\newcommand{\SubTitle}[2]{
+    \parbox{1.75em}{
+        \includegraphics[width=0.025\textwidth]{#1}
+    }\textbf{\textit{\MakeUppercase{#2}}}
 }
 
 \newcommand{\ContactInfo}{
     \hspace{10.5em}\parbox{\columnwidth}{
         \begin{center}
-            \textbf{\textit{КОНТАКТНАЯ ИНФОРМАЦИЯ}}
-            
-            \rule{5em}{1pt}
+            \SubTitle{img/human.png}{Контактная информация}
+    
+            \begin{tcolorbox}[
+                enhanced,
+                colframe=black,
+                arc=5pt,
+                left=1pt,
+                right=1pt,
+                top=2pt,
+                bottom=2pt,
+                halign=center,
+                boxrule=0.5pt,
+                hbox
+            ]
+                \begin{tabular}{ll}
+                    \parbox{0.02\textwidth}{
+                        \includegraphics[width=0.02\textwidth]{img/phone.png}
+                    } +7 (967) 281-53-04 &
+                    \parbox{0.02\textwidth}{
+                        \includegraphics[width=0.02\textwidth]{img/mail.png}
+                    } trud2004@yandex.ru \\
+                    \parbox{0.02\textwidth}{
+                        \includegraphics[width=0.02\textwidth]{img/telegram.png}
+                    } \href{https://t.me/Nep_pasha}{@Nep\_pasha} &
+                    \parbox{0.02\textwidth}{
+                        \includegraphics[width=0.02\textwidth]{img/github.png}
+                    } \href{https://github.com/nepavellab}{@nepavellab}
+                \end{tabular}
+            \end{tcolorbox}
         \end{center}
     }
-
-    \noindent\hspace{20.5em}Телефон: +7 (967) 281-53-04
-    \hspace{2em}Почта: trud2004@yandex.ru
-    \vspace{-1em}
-    
-    \noindent\hspace{20.5em}Телеграмм: \href{https://t.me/Nep_pasha}{@Nep\_pasha}
-    \noindent\hspace{3em}Github: \href{https://github.com/nepavellab}{@nepavellab}
 }
 
 \newcommand{\Hat}{
 \begin{adjustwidth}{-15mm}{-15mm}
-    \colorbox{blue}{
+    \colorbox{black}{
         \begin{minipage}[b][140pt][c]{\linewidth}
             \hspace{1.55cm}\parbox{0.1\textwidth}{
                 \vspace{7em}
@@ -87,7 +99,7 @@
             }
             \parbox{0.9\textwidth}{
                 \begin{center}
-                    \textcolor{white}{\huge{\transparent{0.7}{Android разработчик}}}
+                    \textcolor{white}{\huge{\transparent{0.7}{Программист}}}
                     \vspace{1em}
 
                     \textcolor{white}{\Huge{\textbf{НЕПОМНЯЩИХ \\ПАВЕЛ}}}
@@ -107,10 +119,7 @@
         \begin{leftcolumn}
             \Sep
             \begin{center}
-                \textbf{\textit{ТЕХНИЧЕСКИЕ НАВЫКИ}}
-                \vspace{-1.25em}
-
-                \rule{5em}{1pt}
+                \SubTitle{img/skills.png}{Технические навыки}
             \end{center}
             \vspace{-1em}
             \begin{itemize}[
@@ -128,10 +137,7 @@
             
             \Sep
             \begin{center}
-                \textbf{\textit{СТЕК ТЕХНОЛОГИЙ}}
-                \vspace{-1.25em}
-
-                \rule{5em}{1pt}
+                \SubTitle{img/tech.png}{Стек технологий}
             \end{center}
             \vspace{-1em}
             \begin{itemize}[
@@ -140,20 +146,18 @@
                 leftmargin=0.275cm,
                 itemsep=0.1cm
             ]
-                \item Языки программирования: \\C/C++, Java, Kotlin, Python
+                \item Основные языки: \\C/C++, Java, Kotlin
                 \item SQLite, Firebase
                 \item Android Framework
                 \item Room
                 \item Retrofit
                 \item Dagger 2
+                \item Jetpack Compose
             \end{itemize}
 
             \Sep
             \begin{center}
-                \textbf{\textit{ЯЗЫКИ}}
-                \vspace{-1.25em}
-
-                \rule{5em}{1pt}
+                \SubTitle{img/languages.png}{Языки}
             \end{center}
             \vspace{-1em}
             \begin{itemize}[
@@ -172,10 +176,7 @@
             
             \Sep
             \begin{center}
-                \textbf{\textit{ОБРАЗОВАНИЕ}}
-                \vspace{-1.25em}
-
-                \rule{5em}{1pt}
+                \SubTitle{img/education.png}{Образование}
             \end{center}
             \vspace{-1em}
             \noindent\parbox{0.1\columnwidth}{
@@ -194,10 +195,7 @@
 
             \Sep
             \begin{center}
-                \textbf{\textit{ДОПОЛНИТЕЛЬНОЕ ОБРАЗОВАНИЕ}}
-                \vspace{-1.25em}
-
-                \rule{5em}{1pt}
+                \SubTitle{img/sec_edu.png}{Дополнительное образование}
             \end{center}
             \vspace{-1em}
             \noindent\parbox{0.09\columnwidth}{
@@ -230,10 +228,7 @@
 
             \Sep
             \begin{center}
-                \textbf{\textit{ПРОЕКТНАЯ ДЕЯТЕЛЬНОСТЬ}}
-                \vspace{-1.25em}
-
-                \rule{5em}{1pt}
+                \SubTitle{img/project.png}{Проектная деятельность}
             \end{center}
             \vspace{-1em}
             \textcolor{blue}{$\blacktriangleright$} 
@@ -246,7 +241,7 @@
             реализовал работу с QR через камеру, добавление и считывание данных из базы по сети.
             
             \noindent\textcolor{blue}{$\blacktriangleright$} 
-            \textbf{\underline{Мини-аналог <<Pinterest>> (в рамках курса ОЦ <<Технопарк>>)}}
+            \textbf{\underline{Аналог <<Pinterest>> (в рамках курса ОЦ <<Технопарк>>)}}
             
             \noindent\textit{Kotlin, Retrofit, Picasso, Room, Android Framework}
             
@@ -254,14 +249,12 @@
             Разработал функционал асинхронной загрузки данных по сети через открытый API.
 
             \noindent\textcolor{blue}{$\blacktriangleright$}
-            \noindent\textbf{\underline{Другие проекты}}
+            \noindent\textbf{\underline{Другие технологии, использованные в проектах}}
 
-            \noindent\textit{JavaScript, Three.js, Django, Bootstrap, Qt/PyQt, OpenMP, sympy, numpy}
+            \noindent\textit{JavaScript, Python, Three.js, Django, Bootstrap, Qt/PyQt, OpenMP, numpy, PostgreSQL, bash, ipywidgets}
         \end{rightcolumn}
     \end{paracol}
+    \vspace{3em}
 
-    \noindent Разработал веб-сервис <<вопрос-ответ>> в рамках курса <<Основ Web-разработки>>
-    ОЦ <<Технопарк>>. Написал ряд GUI приложений с использованием фреймворка Qt для автоматизации учебной
-    деятельности, разработал математическое ПО с использованием параллельных вычислений в рамках курса <<Операционных систем>>
-    МГТУ им. Н.Э.Баумана. Разработал ряд веб-приложений в рамках курса <<Компьютерной геометрии>> МГТУ им. Н.Э.Баумана.
+    \noindent\rule{\textwidth}{1.25pt}
 \end{document}
