@@ -28,6 +28,17 @@
     urlcolor=blue
 ]{hyperref}
 
+\newcommand{\Technologies}[1]{
+    \begin{tcolorbox}[
+        colback=blue!5,
+        colframe=black,
+        fonttitle=\bfseries,
+        title=Технологии
+    ]
+    \texttt{\small{#1}}
+    \end{tcolorbox}
+}
+
 \newcommand{\Scale}{1.25}
 \tcbuselibrary{skins}
 
@@ -89,7 +100,7 @@
     }
 }
 
-\newcommand{\Hat}{
+\newcommand{\CVHat}{
 \begin{adjustwidth}{-15mm}{-15mm}
     \colorbox{black}{
         \begin{minipage}[b][140pt][c]{\linewidth}
@@ -112,7 +123,7 @@
 }
 
 \begin{document}
-    \Hat
+    \CVHat
 
     \begin{paracol}{2}
         \switchcolumn[0]
@@ -224,37 +235,36 @@
                 Программа: \textit{Android разработчик}
                 \hfill \textit{2024 -- н.в.} 
             }
-            \vspace{-1.1em}
 
             \Sep
             \begin{center}
                 \SubTitle{img/project.png}{Проектная деятельность}
             \end{center}
             \vspace{-1em}
-            \textcolor{blue}{$\blacktriangleright$} 
+            \textcolor{blue}{$\blacktriangleright$}
             \textbf{\underline{Приложение для организации мероприятий}}
             
-            \noindent\textit{Java, ZXing, Firebase, Android Framework}
+            \Technologies{Java, ZXing, Firebase, Android Framework}
             
             \noindent Разработал мобильное приложения для создания мероприятий.
             Создал авторизацию через сторонние сервисы, функцию восстановление пароля через почту,
             реализовал работу с QR через камеру, добавление и считывание данных из базы по сети.
             
             \noindent\textcolor{blue}{$\blacktriangleright$} 
-            \textbf{\underline{Аналог <<Pinterest>> (в рамках курса ОЦ <<Технопарк>>)}}
+            \textbf{\underline{Веб-сервис <<вопрос-ответ>> (в рамках курса ОЦ <<Технопарк>>)}}
+        
+            \Technologies{JavaScript, Python, Django, HTML \& CSS, Bootstrap, PostgreSQL}
             
-            \noindent\textit{Kotlin, Retrofit, Picasso, Room, Android Framework}
-            
-            \noindent Разработал приложение, реализующее базовый функционал социальной сети <<Pinterest>>.
-            Разработал функционал асинхронной загрузки данных по сети через открытый API.
+            \noindent Разработал веб-сайт (аналог <<Stack Overflow>>) для обсуждения проблем различной тематики.
 
             \noindent\textcolor{blue}{$\blacktriangleright$}
-            \noindent\textbf{\underline{Другие технологии, использованные в проектах}}
+            \noindent\textbf{\underline{Инструменты в проектах в ходе учебной деятельности}}
+            
+            \Technologies{OpenMP, Qt/PyQt, numpy, Three.js, LaTeX, bash}
 
-            \noindent\textit{JavaScript, Python, Three.js, Django, Bootstrap, Qt/PyQt, OpenMP, numpy, PostgreSQL, bash, ipywidgets}
         \end{rightcolumn}
     \end{paracol}
-    \vspace{3em}
+    \vspace{1em}
 
     \noindent\rule{\textwidth}{1.25pt}
 \end{document}
